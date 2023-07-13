@@ -26,13 +26,7 @@ export type AffairType = {
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs: any = [ // need to fix any
-    {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
-    {_id: 2, name: 'anime', priority: 'low'},
-    {_id: 3, name: 'games', priority: 'low'},
-    {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
-]
+
 
 // pure helper functions
 export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
@@ -46,7 +40,12 @@ export const deleteAffair = (affairs: any, _id: any): any => { // need to fix an
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState(
+        [{_id: 1, name: 'React', priority: 'high'},
+        {_id: 2, name: 'anime', priority: 'low'},
+        {_id: 3, name: 'games', priority: 'low'},
+        {_id: 4, name: 'work', priority: 'high'},
+        {_id: 5, name: 'html & css', priority: 'middle'},]) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
